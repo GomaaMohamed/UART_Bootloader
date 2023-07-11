@@ -18,7 +18,6 @@
     - [Prerequisites](#Prerequisites)
     - [Installation](#installation)
   - [Usage](#usage)
-  - [Examples](#examples)
 - [Blinking Application](#blinking_application)
 - [License](#license)
 
@@ -87,6 +86,48 @@ $ ./burner ./app.hex /dev/ttyUSB0
 - openocd
 ```
 #### Installation:
+1. Clone the repo
+```
+$ git clone https://github.com/GomaaMohamed/UART_Bootloader.git
+```
+2. change the path of the project home in makefile of the bootloader
+3. set the memory boundries through linker.ld
+4. Open the terminal inside the host_app folder and build the application to get the executable
+```
+$ make all
+"this will generate a binary executable named app.hex(this is the bootloader executable)"
+```
+5. burn the bootloader
+```
+$ make flash
+```
+### Usage
+1. To build the Project
+```
+$ make all
+```
+2. To clean the Project
+```
+$ make clean
+```
+3. To erase the flash
+```
+$ make erase
+```
+4. To burn the Project
+```
+$ make flash
+```
+5. To debug the Project
+```
+$ ./openport
+  "this bash script will open a remote telnet port on the target using openocd"
+$ ./startgdb ./app.elf
+  "this bash script will start a debug session using gdb-multiarch"
+```
+## Blinking Application
+
+
 
 
 
