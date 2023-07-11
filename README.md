@@ -6,6 +6,7 @@
 ```
 
 ## Table of Contents
+- [Hardware](#hardware)
 - [Block Definition Diagram for the System](#block_definition_diagram_for_the_system)
 - [Host App](#host_app)
   - [Getting Started](#getting_started)
@@ -20,6 +21,14 @@
   - [Examples](#examples)
 - [Blinking Application](#blinking_application)
 - [License](#license)
+
+
+## Hardware
+```
+Stm32f103
+USB To TTL Module
+Host Machine
+```
 
   
 ## Block Definition Diagram for the System
