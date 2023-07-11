@@ -37,8 +37,8 @@ Host Machine
 ## Host App
 ### Getting Started
 ```
-This is a C code used to send the Hex File Record by Record through the serial Port
-It's not allowed to send the next Record before recieving an OK message from the target 
+- This is a C code used to send the Hex File Record by Record through the serial Port
+- It's not allowed to send the next Record before recieving an OK message from the target 
 ```
 #### Prerequisites:
 ```
@@ -50,7 +50,8 @@ It's not allowed to send the next Record before recieving an OK message from the
 ```
 $ git clone https://github.com/GomaaMohamed/UART_Bootloader.git
 ```
-2. Open the terminal inside the host_app folder and build the application to get the executable
+2. change the path of the project home in makefile of the host app
+3. Open the terminal inside the host_app folder and build the application to get the executable
 ```
 $ make all
 "this will generate a binary executable named burner"
@@ -58,7 +59,7 @@ $ make all
 ### Usage
 1. Change the permissions of the serial port that will be used
 ```
-$ chmod 777 /dev/ttyUSB0
+$ sudo chmod 777 /dev/ttyUSB0
 ```
 2. Send the Hex File
 ```
@@ -66,6 +67,26 @@ $ ./burner ./app.hex /dev/ttyUSB0
 ```
 
 ## Bootloader
+### Getting Started
+```
+- This is the bootloader that will be used to recieve the hex file from host app and burns it
+- It's not allowed to recieve a hex record before analysing and burning the previous one
+- The bootloader consists of the mcal layer that contains the drivers of mcu
+- Additionally it consisst of the app layer that contains the software components of the application
+  Interface Module: recieves the hex file record by record and send it to Parser Module
+  Parser Module: analyses the hex record, perform check sum convert hex record from ascci to hex,
+                 sets endianess, and sends the binary istructions to Burner Module
+  Burner Module: burns, and verifies the binary instructions in the internal flash
+```
+#### Prerequisites:
+```
+- arm-none-eabi-gcc
+- make
+- st-flash
+- gdb-multiarch
+- openocd
+```
+#### Installation:
 
 
 
