@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+CC	Makefile	/^CC := gcc$/;"	m
+HEX_FILE	sources/main.c	/^#define HEX_FILE /;"	d	file:
+HOME	Makefile	/^HOME := \/home\/gomaa\/Desktop\/Tech\/Interview\/Projects\/02-Bootloader\/host_burner$/;"	m
+INCLUDES	Makefile	/^INCLUDES = -I $(HOME)\/include $/;"	m
+PATH_TO_OBJECT	Makefile	/^PATH_TO_OBJECT := "burner"$/;"	m
+SERIAL_PORT	sources/main.c	/^#define SERIAL_PORT /;"	d	file:
+SRCS	Makefile	/^SRCS = $(wildcard $(HOME)\/*.c) \\$/;"	m
+build	Makefile	/^build:$/;"	t
+clean	Makefile	/^clean:$/;"	t
+main	sources/main.c	/^int main(int argc, char *argv[]) {$/;"	f	typeref:typename:int

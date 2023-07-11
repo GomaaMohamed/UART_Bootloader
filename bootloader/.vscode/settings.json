@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "billingsys_interface.h": "c",
+    "std_types.h": "c"
+  }
+}
