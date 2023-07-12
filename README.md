@@ -72,13 +72,14 @@ $ ./burner ./app.hex /dev/ttyUSB0
 ## Bootloader
 ### Getting Started
 ```
-- This is the bootloader that will be used to receive and burn the Hex File sent from the host app.
+- This is the bootloader that will be used to receive and burn the Hex File
+  sent from the host app.
 - It is not permissible to receive a Hex record before analyzing and burning the previous one.
 - The bootloader comprises the MCAL layer that includes the drivers of the MCU, and an APP layer
   that contains the software components of the application.
 - The Interface Module receives the Hex File record by record and sends it to the Parser Module.
-- The Parser Module analyzes the Hex record, performs checksum, converts the Hex record from ASCII to Hex,
-  sets endianess, and sends the binary instructions to the Burner Module.
+- The Parser Module analyzes the Hex record, performs checksum, converts the Hex record from
+  ASCII to Hex,sets endianess, and sends the binary instructions to the Burner Module.
 - The Burner Module burns and verifies the binary instructions in the internal flash.
 ```
 #### Prerequisites:
@@ -161,8 +162,8 @@ $ make all
 ## License
 ```
 This library is released under the MIT License ↗. Feel free to use it in your own projects, 
-modify it, and distribute it as needed. If you find any issues or have suggestions for improvement, 
-please open an issue or submit a pull request.
+modify it, and distribute it as needed. If you find any issues or have suggestions for
+improvement, please open an issue or submit a pull request.
 ```
 
 
