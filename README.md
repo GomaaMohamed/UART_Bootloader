@@ -19,6 +19,9 @@
     - [Installation](#installation)
   - [Usage](#usage)
 - [Blinking Application](#blinking_application)
+  - [Getting Started](#getting_started)
+    - [Prerequisites](#Prerequisites)
+    - [Installation](#installation)
 - [License](#license)
 
 
@@ -126,6 +129,40 @@ $ ./startgdb ./app.elf
   "this bash script will start a debug session using gdb-multiarch"
 ```
 ## Blinking Application
+### Getting Started
+```
+- This is the application that will be burned using the bootloader flash
+- It is a Led blinks every second 
+```
+#### Prerequisites:
+```
+- arm-none-eabi-gcc
+- make
+- st-flash
+- gdb-multiarch
+- openocd
+```
+#### Installation:
+1. Clone the repo
+```
+$ git clone https://github.com/GomaaMohamed/UART_Bootloader.git
+```
+2. change the path of the project home in makefile of the application
+3. set the memory boundries through linker.ld
+4. Open the terminal inside the host_app folder and build the application to get the hex file
+```
+$ make all
+"this will generate a binary executable named app.hex(this application executable)"
+```
+5. burn the bootloader
+   "As mentioned on the Hoast App"
+
+## License
+```
+This library is released under the MIT License ↗. Feel free to use it in your own projects, 
+modify it, and distribute it as needed. If you find any issues or have suggestions for improvement, 
+please open an issue or submit a pull request.
+```
 
 
 
