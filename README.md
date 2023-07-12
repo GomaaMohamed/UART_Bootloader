@@ -1,8 +1,8 @@
 # UART_Bootloader
 ```
->> This is a UART Bootloader to update the Software of STM32F103 through UART
->> We used the host application to send the hex file through the UART
->> The project consist of the Host App, Bootloadear, and a Blinking Example App
+>> The UART Bootloader updates the software of STM32F103 through UART.
+>> We utilized the host application to transmit the hex file via UART.
+>> The project comprises the Host App, Bootloader, and a Blinking Example App.
 ```
 
 ## Table of Contents
@@ -39,8 +39,8 @@ Host Machine
 ## Host App
 ### Getting Started
 ```
-- This is a C code used to send the Hex File Record by Record through the serial Port
-- It's not allowed to send the next Record before recieving an OK message from the target 
+- This C code sends the Hex File record by record through the serial port.
+- Sending the next record is not permitted until an OK message is received from the target.
 ```
 #### Prerequisites:
 ```
@@ -52,18 +52,19 @@ Host Machine
 ```
 $ git clone https://github.com/GomaaMohamed/UART_Bootloader.git
 ```
-2. change the path of the project home in makefile of the host app
-3. Open the terminal inside the host_app folder and build the application to get the executable
+2. Modify the path of the project home in the host app's makefile.
+3. Navigate to the host_app folder in the terminal and compile the application
+   to generate the executable.
 ```
 $ make all
-"this will generate a binary executable named burner"
+"An executable named "burner" will be generated in binary format"
 ```
 ### Usage
-1. Change the permissions of the serial port that will be used
+1. Modify the permissions of the serial port that will be utilized.
 ```
 $ sudo chmod 777 /dev/ttyUSB0
 ```
-2. Send the Hex File
+2. Transmit the Hex File
 ```
 $ ./burner ./app.hex /dev/ttyUSB0
 ```
@@ -71,14 +72,14 @@ $ ./burner ./app.hex /dev/ttyUSB0
 ## Bootloader
 ### Getting Started
 ```
-- This is the bootloader that will be used to recieve the hex file from host app and burns it
-- It's not allowed to recieve a hex record before analysing and burning the previous one
-- The bootloader consists of the mcal layer that contains the drivers of mcu
-- Additionally it consisst of the app layer that contains the software components of the application
-  Interface Module: recieves the hex file record by record and send it to Parser Module
-  Parser Module: analyses the hex record, perform check sum convert hex record from ascci to hex,
-                 sets endianess, and sends the binary istructions to Burner Module
-  Burner Module: burns, and verifies the binary instructions in the internal flash
+- This is the bootloader that will be utilized to receive and burn the Hex File sent from the host app.
+- It is not permissible to receive a Hex record before analyzing and burning the previous one.
+- The bootloader comprises the MCAL layer that includes the drivers of the MCU, and an APP layer
+  that contains the software components of the application.
+- The Interface Module receives the Hex File record by record and sends it to the Parser Module.
+- The Parser Module analyzes the Hex record, performs checksum, converts the Hex record from ASCII to Hex,
+  sets endianess, and sends the binary instructions to the Burner Module.
+- The Burner Module burns and verifies the binary instructions in the internal flash.
 ```
 #### Prerequisites:
 ```
