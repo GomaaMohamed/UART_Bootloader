@@ -1,7 +1,7 @@
 # UART_Bootloader
 ```
 >> The UART Bootloader updates the software of STM32F103 through UART.
->> We utilized the host application to transmit the hex file via UART.
+>> We used the host application to transmit the hex file via UART.
 >> The project comprises the Host App, Bootloader, and a Blinking Example App.
 ```
 
@@ -72,7 +72,7 @@ $ ./burner ./app.hex /dev/ttyUSB0
 ## Bootloader
 ### Getting Started
 ```
-- This is the bootloader that will be utilized to receive and burn the Hex File sent from the host app.
+- This is the bootloader that will be used to receive and burn the Hex File sent from the host app.
 - It is not permissible to receive a Hex record before analyzing and burning the previous one.
 - The bootloader comprises the MCAL layer that includes the drivers of the MCU, and an APP layer
   that contains the software components of the application.
@@ -94,12 +94,12 @@ $ ./burner ./app.hex /dev/ttyUSB0
 ```
 $ git clone https://github.com/GomaaMohamed/UART_Bootloader.git
 ```
-2. change the path of the project home in makefile of the bootloader
-3. set the memory boundries through linker.ld
-4. Open the terminal inside the host_app folder and build the application to get the executable
+2. Modify the path of the project home in the bootloader's makefile.
+3. Set the memory boundaries in the linker.ld file.
+4. Navigate to the bootloader folder in the terminal and compile the application to generate the executable.
 ```
 $ make all
-"this will generate a binary executable named app.hex(this is the bootloader executable)"
+"This will create a binary executable named app.hex, which is the bootloader executable."
 ```
 5. burn the bootloader
 ```
@@ -114,7 +114,7 @@ $ make all
 ```
 $ make clean
 ```
-3. To erase the flash
+3. To erase the Flash
 ```
 $ make erase
 ```
@@ -125,15 +125,15 @@ $ make flash
 5. To debug the Project
 ```
 $ ./openport
-  "this bash script will open a remote telnet port on the target using openocd"
+  "This bash script will launch OpenOCD to establish a remote Telnet port on the target"
 $ ./startgdb ./app.elf
-  "this bash script will start a debug session using gdb-multiarch"
+  "his bash script will initiate a debugging session using gdb-multiarch."
 ```
 ## Blinking Application
 ### Getting Started
 ```
-- This is the application that will be burned using the bootloader flash
-- It is a Led blinks every second 
+- This is the application that will be programmed into the flash memory using the bootloader.
+- It is an LED that blinks once every second.
 ```
 #### Prerequisites:
 ```
@@ -148,15 +148,15 @@ $ ./startgdb ./app.elf
 ```
 $ git clone https://github.com/GomaaMohamed/UART_Bootloader.git
 ```
-2. change the path of the project home in makefile of the application
-3. set the memory boundries through linker.ld
-4. Open the terminal inside the host_app folder and build the application to get the hex file
+2. Modify the path of the project home in the application's makefile.
+3. Set the memory boundaries in the linker.ld file.
+4. Navigate to the application folder in the terminal and compile the application to generate the Hex File.
 ```
 $ make all
-"this will generate a binary executable named app.hex(this application executable)"
+"This will create a binary executable named app.hex, which is the application executable"
 ```
 5. burn the bootloader
-   "As mentioned on the Hoast App"
+   "As stated in the Host App"
 
 ## License
 ```
