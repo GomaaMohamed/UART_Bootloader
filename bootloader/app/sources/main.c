@@ -9,14 +9,14 @@
 int main(void)
 {   
     // enable system clock
-    RCC_voidInitSysClock();
-	INIT_init();
+    RCC_initSysClock();
+	INT_init();
 	PARSER_init();
 	BURNER_init();
 
 	while(1)
 	{
-		INIT_update();
+		INT_update();
 		PARSER_update();
 		BURNER_update();
 	}

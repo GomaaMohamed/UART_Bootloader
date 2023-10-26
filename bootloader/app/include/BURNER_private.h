@@ -1,43 +1,32 @@
-#ifndef BURNER_PRIVATE_H
-#define BURNER_PRIVATE_H
+/*****************************************************************************
+* @file:    BURNER_private.h
+* @author:  Copyright (c) 2023 Gomaa Mohammed Gomaa.
+* @license: GNU GPL version 3 or later.
+*			This is free software: you are free to change and redistribute it.  
+*			There is NO WARRANTY, to the extent permitted by law.
+* @version: V0.2   
+* @date:    Fri, 20 Oct 2023 14:21:12 +0200
+* @brief:   Bootloader for STM32F103
+******************************************************************************/
+#ifndef  _BURNER_PRIVATE_H
+#define  _BURNER_PRIVATE_H
  
-/************************************************************************
-* @file BURNER_private.h
-* @author Copyright (c) 2023 Gomaa Mohammed Gomaa.  All rights reserved.
-* @version V0.1   
-* @date Mon, 05 Jun 2023 18:19:59 +0300
-* @brief A description of the module’s purpose.
-*************************************************************************/
-
 /* ==================================================================== */
-/* ====================== private data types ========================== */
+/* =================== Private Variables and Macros =================== */
 /* ==================================================================== */
-
 /* Definition of private datatypes go here */
-static u16 *data_to_be_flashed;
-static u32 address_of_data;
-static u8 count_of_data;
-u8 first_record_flag;
-typedef enum
-{
-    DATA_RECIEVED,
-    DATA_UNRECIEVED
-} t_burner_recieved;
-t_burner_recieved indicator;
+static u16 *DataToBeFlashed;
+static u32 AddressOfData;
+static u8 CountOfData;
+static u8 FirstRecordFlag;
 
-/* ==================================================================== */
-/* ======================== private constants ========================= */
-/* ==================================================================== */
-
-/* #define, constants and enums statements go here */
-
-
+BurnerRequest_type BurnerRequestState;
 
 
 /* ==================================================================== */
-/* ==================== private function prototypes =================== */
+/* =================== Private Functions Declaration ================== */
 /* ==================================================================== */
 
-/* Private Functions Prototypes go here */
-static u8 Burner_writeVerification(u32 Address, u8 HalfWord_Count);
+static u8 writeVerification(u32 Address, u8 HalfWordCount);
+
 #endif

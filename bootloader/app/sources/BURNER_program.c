@@ -1,117 +1,117 @@
-/************************************************************************
-* @file BURNER_program.c
-* @author Copyright (c) 2023 Gomaa Mohammed Gomaa.  All rights reserved.
-* @version V0.1   
-* @date Mon, 05 Jun 2023 18:19:59 +0300
-* @brief A description of the module’s purpose.
-*************************************************************************/
+/*****************************************************************************
+* @file:    BURNER_program.c
+* @author:  Copyright (c) 2023 Gomaa Mohammed Gomaa.
+* @license: GNU GPL version 3 or later.
+*			This is free software: you are free to change and redistribute it.  
+*			There is NO WARRANTY, to the extent permitted by law.
+* @version: V0.2   
+* @date:    Fri, 20 Oct 2023 14:21:12 +0200
+* @brief:   Bootloader for STM32F103
+******************************************************************************/
 
 /* ==================================================================== */
-/* ========================== include files =========================== */
+/* ========================== Include Files =========================== */
 /* ==================================================================== */
 
-/* Inclusion of Standard Types and Bit Math header files goes here */
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
-/* Inclusion of Module header files goes here */
+
+#include "FPEC_interface.h"
+#include "INT_interface.h"
+
 #include "BURNER_interface.h"
 #include "BURNER_private.h"
 #include "BURNER_config.h"
 
-/* Inclusion of interface header files of the Other Modules goes here */
-#include "FPEC_interface.h"
-#include "INT_interface.h"
-
-
-
 /* ==================================================================== */
-/* ======================== global variables ========================== */
+/* ================= Public Functions Implementation ================== */
 /* ==================================================================== */
 
-/* Global variables definitions go here */
-
-
-
-
-/* ==================================================================== */
-/* =================== Public functions definition ==================== */
-/* ==================================================================== */
-
-// function to initialize the module
-void BURNER_init(void){
-    data_to_be_flashed = 0;
-    address_of_data = 0x08002000;
-    count_of_data = 0;
-    indicator = DATA_UNRECIEVED;
-    first_record_flag = 1;
+// Function to initialize the module
+void BURNER_init(void)
+{
+    DataToBeFlashed = NULL;
+    AddressOfData = APP_SART_ADDRESS;
+    CountOfData = 0;
+    BurnerRequestState = IDLE_STATE;
+    FirstRecordFlag = 1;
 }
 
-// function to be called from the other modules to send the data that will be flashed
-void BURNER_sendData(u16 *data,u32 address,u8 count){
-    data_to_be_flashed = data;
-    address_of_data = address;
-    count_of_data = count;
+// Function to be called from the other modules to send the data that will be flashed
+void BURNER_sendData(u16 *Data,u32 Address,u8 Count)
+{
+    DataToBeFlashed = Data;
+    AddressOfData = Address;
+    CountOfData = Count;
 }
 
-// function to be called from the other modules to set the event of the recieved data
-void BURNER_indicateData(void){
-    indicator = DATA_RECIEVED;
+// Function to be called from the other modules to set the event of the recieved data
+void BURNER_makeRequest(BurnerRequest_type BurnerRequest)
+{
+    BurnerRequestState = BurnerRequest;
 }
 
-// task to be called periodicly to do the logic of the module
-void BURNER_update(void){
-    // check the recieved record event
-    if (indicator == DATA_RECIEVED)
+// Task to be called periodicly to do the logic of the module
+void BURNER_update(void)
+{
+    // Check the recieved record event
+    if (BurnerRequestState == WRITE_REQUEST)
     {
-        // check if the recived record is the first record or not
-        if (first_record_flag == 1)
+        // Check if the recived record is the first record or not
+        if (FirstRecordFlag == 1)
         {
-            // erase Application Area
-            FPEC_voidEraseNumberOfPages(8,64);
-            // reset first record flag
-            first_record_flag = 0;
+            // Erase Application Area
+            FPEC_eraseNumberOfPages(APP_START_PAGE,APP_NUMBER_OF_PAGES);
+            // Reset first record flag
+            FirstRecordFlag = 0;
         }
-        // flash the recieved data
-        FPEC_voidFlashWrite(address_of_data,data_to_be_flashed,count_of_data);
-        // verify the flashed data
-        u8 verify = Burner_writeVerification(address_of_data,count_of_data);
-        while(verify != 1)
+        // Flash the recieved data
+        FPEC_writeFlash(AddressOfData,DataToBeFlashed,CountOfData);
+        // Verify the flashed data
+        u8 Verify = writeVerification(AddressOfData,CountOfData);
+        while(Verify != 1)
         {
-            FPEC_voidFlashWrite(address_of_data,data_to_be_flashed,count_of_data);
-            verify = Burner_writeVerification(address_of_data,count_of_data);
+            FPEC_writeFlash(AddressOfData,DataToBeFlashed,CountOfData);
+            Verify = writeVerification(AddressOfData,CountOfData);
         }
-        // send an OK event to INTERFACE Module 
-        INIT_sendOkStatus(OK);
-        // reset the recieved data event
-        indicator = DATA_UNRECIEVED;
+        // Send an Ack event to INTERFACE Module 
+        INT_sendAckStatus(ACK);
+        // Reset the recieved data event
+        BurnerRequestState = IDLE_STATE;
     }
+    else if (BurnerRequestState == ERASE_REQUEST)
+    {
+        // Erase Application Area
+        FPEC_eraseNumberOfPages(APP_START_PAGE,APP_NUMBER_OF_PAGES);
+        // Reset the recieved data event
+        BurnerRequestState = IDLE_STATE;
+    }
+    
 }
-
-
-
 
 /* ==================================================================== */
 /* =============== private functions definition ======================= */
 /* ==================================================================== */
 
-// function to read the flashed data and verify it 
-static u8 Burner_writeVerification(u32 Address,u8 HalfWord_Count){
-    // variable to hold the state 
-    u8 writeVerification_Flag = 0;
-    // loop on all the flashed half words
-    for (u8 i = 0; i < HalfWord_Count; i++)
-    {   // check the equality with the actual data
-        if (*(((volatile u16*)Address)+i)==data_to_be_flashed[i])
+// Function to read the flashed data and verify it 
+static u8 writeVerification(u32 Address,u8 HalfWordCount)
+{
+    // Variable to hold the state 
+    u8 WriteVerificationFlag = 0;
+    // Loop on all the flashed half words
+    for (u8 i = 0; i < HalfWordCount; i++)
+    {   // Check the equality with the actual data
+        if (*(((u16*)Address)+i)==DataToBeFlashed[i])
         {  
-            // set write verification flag
-            writeVerification_Flag = 1;
+            // Set write verification flag
+            WriteVerificationFlag = 1;
         }
         else{
-            // reset write verification flag
-            writeVerification_Flag = 0;
+            // Reset write verification flag
+            WriteVerificationFlag = 0;
             break;
         }
     }
-    // return write verification flag
-    return writeVerification_Flag;
+    // Return write verification flag
+    return WriteVerificationFlag;
 }

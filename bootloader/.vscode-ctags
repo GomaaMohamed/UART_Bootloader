@@ -1,0 +1,380 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+ACR	mcal/include/FPEC_private.h	/^	volatile u32 ACR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+AR	mcal/include/FPEC_private.h	/^	volatile u32 AR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+AS	Makefile	/^AS = arm-none-eabi-as $/;"	m
+AS	output/Makefile	/^AS = arm-none-eabi-as $/;"	m
+Address	app/include/PARSER_private.h	/^static u32 Address = 0x08000000;$/;"	v	typeref:typename:u32
+AsciToHex	lib/sources/CHECK_program.c	/^u8 AsciToHex(u8 Copy_u8Asci)$/;"	f	typeref:typename:u8
+BIN	Makefile	/^BIN = arm-none-eabi-objcopy$/;"	m
+BIN	output/Makefile	/^BIN = arm-none-eabi-objcopy$/;"	m
+BIT_MATH_H	lib/include/BIT_MATH.h	/^#define  BIT_MATH_H$/;"	d
+BRR	mcal/include/USART_private.h	/^	  volatile u32 BRR;$/;"	m	struct:__anon4bdcb1230108	typeref:typename:volatile u32
+BR_115200	mcal/include/USART_private.h	/^#define   BR_115200 /;"	d
+BR_4800	mcal/include/USART_private.h	/^#define   BR_4800 /;"	d
+BR_9600	mcal/include/USART_private.h	/^#define   BR_9600 /;"	d
+BURNER_CONFIG_H	app/include/BURNER_config.h	/^#define BURNER_CONFIG_H$/;"	d
+BURNER_INTERFACE_H	app/include/BURNER_interface.h	/^#define BURNER_INTERFACE_H$/;"	d
+BURNER_PRIVATE_H	app/include/BURNER_private.h	/^#define BURNER_PRIVATE_H$/;"	d
+BURNER_indicateData	app/sources/BURNER_program.c	/^void BURNER_indicateData(void){$/;"	f	typeref:typename:void
+BURNER_init	app/sources/BURNER_program.c	/^void BURNER_init(void){$/;"	f	typeref:typename:void
+BURNER_sendData	app/sources/BURNER_program.c	/^void BURNER_sendData(u16 *data,u32 address,u8 count){$/;"	f	typeref:typename:void
+BURNER_update	app/sources/BURNER_program.c	/^void BURNER_update(void){$/;"	f	typeref:typename:void
+BitAccess	mcal/include/FPEC_private.h	/^	}BitAccess;$/;"	m	union:__anonf62ad5b2010a	typeref:struct:__anonf62ad5b2010a::__anonf62ad5b20208
+Burner_writeVerification	app/sources/BURNER_program.c	/^static u8 Burner_writeVerification(u32 Address,u8 HalfWord_Count){$/;"	f	typeref:typename:u8	file:
+CALIB	mcal/include/STK_private.h	/^     u32  CALIB;$/;"	m	struct:__anon0bf19e660108	typeref:typename:u32
+CC	Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+CC	output/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -mthumb -mcpu=cortex-m3$/;"	m
+CFLAGS	output/Makefile	/^CFLAGS = -mthumb -mcpu=cortex-m3$/;"	m
+CHECK_CONFIG_H	lib/include/CHECK_config.h	/^#define CHECK_CONFIG_H$/;"	d
+CHECK_INTERFACE_H	lib/include/CHECK_interface.h	/^#define CHECK_INTERFACE_H$/;"	d
+CHECK_PRIVATE_H	lib/include/CHECK_private.h	/^#define CHECK_PRIVATE_H$/;"	d
+CLK_SOURCE	mcal/include/STK_config.h	/^#define   CLK_SOURCE /;"	d
+CLR_BIT	lib/include/BIT_MATH.h	/^#define  CLR_BIT(/;"	d
+CLR_BYTE	lib/include/BIT_MATH.h	/^#define  CLR_BYTE(/;"	d
+CR	mcal/include/FPEC_private.h	/^	volatile u32 CR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+CR1	mcal/include/USART_private.h	/^	  volatile u32 CR1;$/;"	m	struct:__anon4bdcb1230108	typeref:typename:volatile u32
+CR2	mcal/include/USART_private.h	/^	  volatile u32 CR2;$/;"	m	struct:__anon4bdcb1230108	typeref:typename:volatile u32
+CR3	mcal/include/USART_private.h	/^	  volatile u32 CR3;$/;"	m	struct:__anon4bdcb1230108	typeref:typename:volatile u32
+CTRL	mcal/include/STK_private.h	/^	 u32  CTRL;$/;"	m	struct:__anon0bf19e660108	typeref:typename:u32
+DATA_RECIEVED	app/include/BURNER_private.h	/^    DATA_RECIEVED,$/;"	e	enum:__anon315e77260103
+DATA_UNRECIEVED	app/include/BURNER_private.h	/^    DATA_UNRECIEVED$/;"	e	enum:__anon315e77260103
+DR	mcal/include/USART_private.h	/^	  volatile u32 DR;$/;"	m	struct:__anon4bdcb1230108	typeref:typename:volatile u32
+EOPIE	mcal/include/FPEC_private.h	/^		u32  EOPIE :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+ERRIE	mcal/include/FPEC_private.h	/^		u32  ERRIE :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+FLASH_BASE	mcal/sources/startup_code.c	/^#define FLASH_BASE /;"	d	file:
+FPEC	mcal/include/FPEC_private.h	/^#define FPEC /;"	d
+FPEC_CONFIG	mcal/include/FPEC_config.h	/^#define FPEC_CONFIG$/;"	d
+FPEC_CR	mcal/include/FPEC_private.h	/^#define FPEC_CR /;"	d
+FPEC_CR_TYPE	mcal/include/FPEC_private.h	/^}FPEC_CR_TYPE;$/;"	t	typeref:union:__anonf62ad5b2010a
+FPEC_INTERFACE	mcal/include/FPEC_interface.h	/^#define FPEC_INTERFACE$/;"	d
+FPEC_PRIVATE	mcal/include/FPEC_private.h	/^#define FPEC_PRIVATE$/;"	d
+FPEC_TYPE	mcal/include/FPEC_private.h	/^}FPEC_TYPE;$/;"	t	typeref:struct:__anonf62ad5b20308
+FPEC_voidEraseNumberOfPages	mcal/sources/FPEC_program.c	/^void FPEC_voidEraseNumberOfPages(u8 Copy_u8StartPage,u8 Copy_u8PagesCount)$/;"	f	typeref:typename:void
+FPEC_voidFlashPageErase	mcal/sources/FPEC_program.c	/^void FPEC_voidFlashPageErase(u8 Copy_u8PageNumber)$/;"	f	typeref:typename:void
+FPEC_voidFlashWrite	mcal/sources/FPEC_program.c	/^void FPEC_voidFlashWrite(u32 Copy_u32Address, u16* Copy_u16Data, u8 Copy_u8Length)$/;"	f	typeref:typename:void
+Function_t	app/include/INT_private.h	/^typedef void (*Function_t)(void);$/;"	t	typeref:typename:void (*)(void)
+GET_BIT	lib/include/BIT_MATH.h	/^#define  GET_BIT(/;"	d
+GPIOA	mcal/include/GPIO_interface.h	/^#define   GPIOA /;"	d
+GPIOA_BASE_ADRESS	mcal/include/GPIO_private.h	/^#define   GPIOA_BASE_ADRESS /;"	d
+GPIOA_BRR	mcal/include/GPIO_private.h	/^#define   GPIOA_BRR /;"	d
+GPIOA_BSRR	mcal/include/GPIO_private.h	/^#define   GPIOA_BSRR /;"	d
+GPIOA_CRH	mcal/include/GPIO_private.h	/^#define   GPIOA_CRH /;"	d
+GPIOA_CRL	mcal/include/GPIO_private.h	/^#define   GPIOA_CRL /;"	d
+GPIOA_IDR	mcal/include/GPIO_private.h	/^#define   GPIOA_IDR /;"	d
+GPIOA_LCKR	mcal/include/GPIO_private.h	/^#define   GPIOA_LCKR /;"	d
+GPIOA_ODR	mcal/include/GPIO_private.h	/^#define   GPIOA_ODR /;"	d
+GPIOB	mcal/include/GPIO_interface.h	/^#define   GPIOB /;"	d
+GPIOB_BASE_ADRESS	mcal/include/GPIO_private.h	/^#define   GPIOB_BASE_ADRESS /;"	d
+GPIOB_BRR	mcal/include/GPIO_private.h	/^#define   GPIOB_BRR /;"	d
+GPIOB_BSRR	mcal/include/GPIO_private.h	/^#define   GPIOB_BSRR /;"	d
+GPIOB_CRH	mcal/include/GPIO_private.h	/^#define   GPIOB_CRH /;"	d
+GPIOB_CRL	mcal/include/GPIO_private.h	/^#define   GPIOB_CRL /;"	d
+GPIOB_IDR	mcal/include/GPIO_private.h	/^#define   GPIOB_IDR /;"	d
+GPIOB_LCKR	mcal/include/GPIO_private.h	/^#define   GPIOB_LCKR /;"	d
+GPIOB_ODR	mcal/include/GPIO_private.h	/^#define   GPIOB_ODR /;"	d
+GPIOC	mcal/include/GPIO_interface.h	/^#define   GPIOC /;"	d
+GPIOC_BASE_ADRESS	mcal/include/GPIO_private.h	/^#define   GPIOC_BASE_ADRESS /;"	d
+GPIOC_BRR	mcal/include/GPIO_private.h	/^#define   GPIOC_BRR /;"	d
+GPIOC_BSRR	mcal/include/GPIO_private.h	/^#define   GPIOC_BSRR /;"	d
+GPIOC_CRH	mcal/include/GPIO_private.h	/^#define   GPIOC_CRH /;"	d
+GPIOC_CRL	mcal/include/GPIO_private.h	/^#define   GPIOC_CRL /;"	d
+GPIOC_IDR	mcal/include/GPIO_private.h	/^#define   GPIOC_IDR /;"	d
+GPIOC_LCKR	mcal/include/GPIO_private.h	/^#define   GPIOC_LCKR /;"	d
+GPIOC_ODR	mcal/include/GPIO_private.h	/^#define   GPIOC_ODR /;"	d
+GPIO_FIRST_HALF	mcal/include/GPIO_interface.h	/^#define   GPIO_FIRST_HALF /;"	d
+GPIO_HIGH	mcal/include/GPIO_interface.h	/^#define     GPIO_HIGH /;"	d
+GPIO_INPUTHP_ANALOG	mcal/include/GPIO_interface.h	/^#define     GPIO_INPUTHP_ANALOG /;"	d
+GPIO_INPUTHP_FLOATING	mcal/include/GPIO_interface.h	/^#define     GPIO_INPUTHP_FLOATING /;"	d
+GPIO_INPUTHP_PULL_UP_DOWN	mcal/include/GPIO_interface.h	/^#define     GPIO_INPUTHP_PULL_UP_DOWN /;"	d
+GPIO_INPUT_ANALOG	mcal/include/GPIO_interface.h	/^#define     GPIO_INPUT_ANALOG /;"	d
+GPIO_INPUT_FLOATING	mcal/include/GPIO_interface.h	/^#define     GPIO_INPUT_FLOATING /;"	d
+GPIO_INPUT_PULL_UP_DOWN	mcal/include/GPIO_interface.h	/^#define     GPIO_INPUT_PULL_UP_DOWN /;"	d
+GPIO_LOW	mcal/include/GPIO_interface.h	/^#define     GPIO_LOW /;"	d
+GPIO_OUTPUTHP_10MHZ_AFOD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_10MHZ_AFOD /;"	d
+GPIO_OUTPUTHP_10MHZ_AFPP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_10MHZ_AFPP /;"	d
+GPIO_OUTPUTHP_10MHZ_OD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_10MHZ_OD /;"	d
+GPIO_OUTPUTHP_10MHZ_PP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_10MHZ_PP /;"	d
+GPIO_OUTPUTHP_2MHZ_AFOD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_2MHZ_AFOD /;"	d
+GPIO_OUTPUTHP_2MHZ_AFPP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_2MHZ_AFPP /;"	d
+GPIO_OUTPUTHP_2MHZ_OD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_2MHZ_OD /;"	d
+GPIO_OUTPUTHP_2MHZ_PP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_2MHZ_PP /;"	d
+GPIO_OUTPUTHP_50MHZ_AFOD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_50MHZ_AFOD /;"	d
+GPIO_OUTPUTHP_50MHZ_AFPP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_50MHZ_AFPP /;"	d
+GPIO_OUTPUTHP_50MHZ_OD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_50MHZ_OD /;"	d
+GPIO_OUTPUTHP_50MHZ_PP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUTHP_50MHZ_PP /;"	d
+GPIO_OUTPUT_10MHZ_AFOD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_10MHZ_AFOD /;"	d
+GPIO_OUTPUT_10MHZ_AFPP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_10MHZ_AFPP /;"	d
+GPIO_OUTPUT_10MHZ_OD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_10MHZ_OD /;"	d
+GPIO_OUTPUT_10MHZ_PP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_10MHZ_PP /;"	d
+GPIO_OUTPUT_2MHZ_AFOD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_2MHZ_AFOD /;"	d
+GPIO_OUTPUT_2MHZ_AFPP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_2MHZ_AFPP /;"	d
+GPIO_OUTPUT_2MHZ_OD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_2MHZ_OD /;"	d
+GPIO_OUTPUT_2MHZ_PP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_2MHZ_PP /;"	d
+GPIO_OUTPUT_50MHZ_AFOD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_50MHZ_AFOD /;"	d
+GPIO_OUTPUT_50MHZ_AFPP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_50MHZ_AFPP /;"	d
+GPIO_OUTPUT_50MHZ_OD	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_50MHZ_OD /;"	d
+GPIO_OUTPUT_50MHZ_PP	mcal/include/GPIO_interface.h	/^#define     GPIO_OUTPUT_50MHZ_PP /;"	d
+GPIO_PIN0	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN0 /;"	d
+GPIO_PIN1	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN1 /;"	d
+GPIO_PIN10	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN10 /;"	d
+GPIO_PIN11	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN11 /;"	d
+GPIO_PIN12	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN12 /;"	d
+GPIO_PIN13	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN13 /;"	d
+GPIO_PIN14	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN14 /;"	d
+GPIO_PIN15	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN15 /;"	d
+GPIO_PIN2	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN2 /;"	d
+GPIO_PIN3	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN3 /;"	d
+GPIO_PIN4	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN4 /;"	d
+GPIO_PIN5	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN5 /;"	d
+GPIO_PIN6	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN6 /;"	d
+GPIO_PIN7	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN7 /;"	d
+GPIO_PIN8	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN8 /;"	d
+GPIO_PIN9	mcal/include/GPIO_interface.h	/^#define     GPIO_PIN9 /;"	d
+GPIO_SECOND_HALF	mcal/include/GPIO_interface.h	/^#define   GPIO_SECOND_HALF /;"	d
+GPIO_voidGetHalfPortValue	mcal/sources/GPIO_program.c	/^u8 GPIO_voidGetHalfPortValue(u8 Copy_u8Port,u8 Copy_u8HalfPort)$/;"	f	typeref:typename:u8
+GPIO_voidGetPinValue	mcal/sources/GPIO_program.c	/^u8 GPIO_voidGetPinValue(u8 Copy_u8Port,u8 Copy_u8Pin)$/;"	f	typeref:typename:u8
+GPIO_voidLockPinMode	mcal/sources/GPIO_program.c	/^void GPIO_voidLockPinMode(u8 Copy_u8Port,u8 Copy_u8Pin)$/;"	f	typeref:typename:void
+GPIO_voidSetHalfPortDirection	mcal/sources/GPIO_program.c	/^void GPIO_voidSetHalfPortDirection(u8 Copy_u8Port,u8 Copy_u8HalfPort,u32 Copy_u32HalfPortMode)$/;"	f	typeref:typename:void
+GPIO_voidSetHalfPortValue	mcal/sources/GPIO_program.c	/^void GPIO_voidSetHalfPortValue(u8 Copy_u8Port,u8 Copy_u8HalfPort,u16 Copy_u8Value)$/;"	f	typeref:typename:void
+GPIO_voidSetPinDirection	mcal/sources/GPIO_program.c	/^void GPIO_voidSetPinDirection(u8 Copy_u8Port,u8 Copy_u8Pin,u8 Copy_u8Mode)$/;"	f	typeref:typename:void
+GPIO_voidSetPinValue	mcal/sources/GPIO_program.c	/^void GPIO_voidSetPinValue(u8 Copy_u8Port,u8 Copy_u8Pin,u8 Copy_u8Value)$/;"	f	typeref:typename:void
+GTPR	mcal/include/USART_private.h	/^	  volatile u32 GTPR;$/;"	m	struct:__anon4bdcb1230108	typeref:typename:volatile u32
+HOME	Makefile	/^HOME := \/home\/gomaa\/embedded\/08-ARMCortex-M\/bootloader$/;"	m
+HOME	output/Makefile	/^HOME := \/home\/gomaa\/embedded\/08-ARMCortex-M\/bootloader$/;"	m
+HardFault_Handler	mcal/sources/startup_code.c	/^void HardFault_Handler(void){while(1);}$/;"	f	typeref:typename:void
+INIT_init	app/sources/INT_program.c	/^void INIT_init(void){$/;"	f	typeref:typename:void
+INIT_sendOkStatus	app/sources/INT_program.c	/^void INIT_sendOkStatus(t_status status_value){$/;"	f	typeref:typename:void
+INIT_update	app/sources/INT_program.c	/^void INIT_update(void){$/;"	f	typeref:typename:void
+INT_CONFIG_H	app/include/INT_config.h	/^#define INT_CONFIG_H$/;"	d
+INT_INTERFACE_H	app/include/INT_interface.h	/^#define INT_INTERFACE_H$/;"	d
+INT_PRIVATE_H	app/include/INT_private.h	/^#define INT_PRIVATE_H$/;"	d
+KEYR	mcal/include/FPEC_private.h	/^	volatile u32 KEYR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+LD	Makefile	/^LD = arm-none-eabi-ld $/;"	m
+LD	output/Makefile	/^LD = arm-none-eabi-ld $/;"	m
+LOAD	mcal/include/STK_private.h	/^     u32  LOAD;$/;"	m	struct:__anon0bf19e660108	typeref:typename:u32
+LOCK	mcal/include/FPEC_private.h	/^		u32  LOCK  :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+MER	mcal/include/FPEC_private.h	/^		u32  MER   :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+NMI_Handler	mcal/sources/startup_code.c	/^void NMI_Handler(void){while(1);}$/;"	f	typeref:typename:void
+NOT_OK	app/include/INT_interface.h	/^    NOT_OK$/;"	e	enum:__anonfc1d1c190103
+NULL	lib/include/STD_TYPES.h	/^#define   NULL /;"	d
+OBR	mcal/include/FPEC_private.h	/^	volatile u32 OBR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+OFFSET	mcal/sources/startup_code.c	/^#define OFFSET /;"	d	file:
+OK	app/include/INT_interface.h	/^    OK,$/;"	e	enum:__anonfc1d1c190103
+OPTER	mcal/include/FPEC_private.h	/^		u32  OPTER :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+OPTKEYR	mcal/include/FPEC_private.h	/^	volatile u32 OPTKEYR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+OPTPG	mcal/include/FPEC_private.h	/^		u32  OPTPG :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+OPTWRE	mcal/include/FPEC_private.h	/^		u32  OPTWRE:1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+PARSER_CONFIG_H	app/include/PARSER_config.h	/^#define PARSER_CONFIG_H$/;"	d
+PARSER_INTERFACE_H	app/include/PARSER_interface.h	/^#define PARSER_INTERFACE_H$/;"	d
+PARSER_PRIVATE_H	app/include/PARSER_private.h	/^#define PARSER_PRIVATE_H$/;"	d
+PARSER_indicateRecievedData	app/sources/PARSER_program.c	/^void PARSER_indicateRecievedData(void){$/;"	f	typeref:typename:void
+PARSER_init	app/sources/PARSER_program.c	/^void PARSER_init(void){$/;"	f	typeref:typename:void
+PARSER_setRecord	app/sources/PARSER_program.c	/^void PARSER_setRecord(u8 *Record){$/;"	f	typeref:typename:void
+PARSER_update	app/sources/PARSER_program.c	/^void PARSER_update(void){$/;"	f	typeref:typename:void
+PER	mcal/include/FPEC_private.h	/^		u32  PER   :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+PG	mcal/include/FPEC_private.h	/^		u32  PG    :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+ParseData	app/sources/PARSER_program.c	/^static void ParseData(u8* Copy_u8BufData)$/;"	f	typeref:typename:void	file:
+ParseUpperAddress	app/sources/PARSER_program.c	/^static void ParseUpperAddress(u8* Copy_u8BufData)$/;"	f	typeref:typename:void	file:
+Parser_voidParseRecord	app/sources/PARSER_program.c	/^static void Parser_voidParseRecord(u8* Copy_u8BufData)$/;"	f	typeref:typename:void	file:
+RCC_ADC1	mcal/include/RCC_interface.h	/^#define     RCC_ADC1 /;"	d
+RCC_ADC2	mcal/include/RCC_interface.h	/^#define     RCC_ADC2 /;"	d
+RCC_ADC3	mcal/include/RCC_interface.h	/^#define     RCC_ADC3 /;"	d
+RCC_AFIO	mcal/include/RCC_interface.h	/^#define     RCC_AFIO /;"	d
+RCC_AHB	mcal/include/RCC_interface.h	/^#define     RCC_AHB /;"	d
+RCC_AHBENR	mcal/include/RCC_private.h	/^#define    RCC_AHBENR /;"	d
+RCC_APB1	mcal/include/RCC_interface.h	/^#define     RCC_APB1 /;"	d
+RCC_APB1ENR	mcal/include/RCC_private.h	/^#define    RCC_APB1ENR /;"	d
+RCC_APB1RSTR	mcal/include/RCC_private.h	/^#define    RCC_APB1RSTR /;"	d
+RCC_APB2	mcal/include/RCC_interface.h	/^#define     RCC_APB2 /;"	d
+RCC_APB2ENR	mcal/include/RCC_private.h	/^#define    RCC_APB2ENR /;"	d
+RCC_APB2RSTR	mcal/include/RCC_private.h	/^#define    RCC_APB2RSTR /;"	d
+RCC_BDCR	mcal/include/RCC_private.h	/^#define    RCC_BDCR /;"	d
+RCC_BKP	mcal/include/RCC_interface.h	/^#define     RCC_BKP /;"	d
+RCC_CAN	mcal/include/RCC_interface.h	/^#define     RCC_CAN /;"	d
+RCC_CFGR	mcal/include/RCC_private.h	/^#define    RCC_CFGR /;"	d
+RCC_CIR	mcal/include/RCC_private.h	/^#define    RCC_CIR /;"	d
+RCC_CLOCK_TYPE	mcal/include/RCC_config.h	/^#define     RCC_CLOCK_TYPE /;"	d
+RCC_CR	mcal/include/RCC_private.h	/^#define    RCC_CR /;"	d
+RCC_CRCE	mcal/include/RCC_interface.h	/^#define     RCC_CRCE /;"	d
+RCC_CSR	mcal/include/RCC_private.h	/^#define    RCC_CSR /;"	d
+RCC_DAC	mcal/include/RCC_interface.h	/^#define     RCC_DAC /;"	d
+RCC_DMA1	mcal/include/RCC_interface.h	/^#define     RCC_DMA1 /;"	d
+RCC_DMA2	mcal/include/RCC_interface.h	/^#define     RCC_DMA2 /;"	d
+RCC_FLITF	mcal/include/RCC_interface.h	/^#define     RCC_FLITF /;"	d
+RCC_FSMC	mcal/include/RCC_interface.h	/^#define     RCC_FSMC /;"	d
+RCC_HSE_CRYSTAL	mcal/include/RCC_private.h	/^#define   RCC_HSE_CRYSTAL /;"	d
+RCC_HSE_RC	mcal/include/RCC_private.h	/^#define   RCC_HSE_RC /;"	d
+RCC_HSI	mcal/include/RCC_private.h	/^#define   RCC_HSI /;"	d
+RCC_I2C1	mcal/include/RCC_interface.h	/^#define     RCC_I2C1 /;"	d
+RCC_I2C2	mcal/include/RCC_interface.h	/^#define     RCC_I2C2 /;"	d
+RCC_IOPA	mcal/include/RCC_interface.h	/^#define     RCC_IOPA /;"	d
+RCC_IOPB	mcal/include/RCC_interface.h	/^#define     RCC_IOPB /;"	d
+RCC_IOPC	mcal/include/RCC_interface.h	/^#define     RCC_IOPC /;"	d
+RCC_IOPD	mcal/include/RCC_interface.h	/^#define     RCC_IOPD /;"	d
+RCC_IOPE	mcal/include/RCC_interface.h	/^#define     RCC_IOPE /;"	d
+RCC_IOPF	mcal/include/RCC_interface.h	/^#define     RCC_IOPF /;"	d
+RCC_IOPG	mcal/include/RCC_interface.h	/^#define     RCC_IOPG /;"	d
+RCC_MUL_VAL	mcal/include/RCC_config.h	/^#define    RCC_MUL_VAL /;"	d
+RCC_PLL	mcal/include/RCC_private.h	/^#define   RCC_PLL /;"	d
+RCC_PLL_INPUT	mcal/include/RCC_config.h	/^#define    RCC_PLL_INPUT /;"	d
+RCC_PLL_IN_HSE	mcal/include/RCC_private.h	/^#define   RCC_PLL_IN_HSE /;"	d
+RCC_PLL_IN_HSE_DIV_2	mcal/include/RCC_private.h	/^#define   RCC_PLL_IN_HSE_DIV_2 /;"	d
+RCC_PLL_IN_HSI_DIV_2	mcal/include/RCC_private.h	/^#define   RCC_PLL_IN_HSI_DIV_2 /;"	d
+RCC_PWR	mcal/include/RCC_interface.h	/^#define     RCC_PWR /;"	d
+RCC_SDIO	mcal/include/RCC_interface.h	/^#define     RCC_SDIO /;"	d
+RCC_SPI1	mcal/include/RCC_interface.h	/^#define     RCC_SPI1 /;"	d
+RCC_SPI2	mcal/include/RCC_interface.h	/^#define     RCC_SPI2 /;"	d
+RCC_SPI3	mcal/include/RCC_interface.h	/^#define     RCC_SPI3 /;"	d
+RCC_SRAM	mcal/include/RCC_interface.h	/^#define     RCC_SRAM /;"	d
+RCC_TIM1	mcal/include/RCC_interface.h	/^#define     RCC_TIM1 /;"	d
+RCC_TIM10	mcal/include/RCC_interface.h	/^#define     RCC_TIM10 /;"	d
+RCC_TIM11	mcal/include/RCC_interface.h	/^#define     RCC_TIM11 /;"	d
+RCC_TIM12	mcal/include/RCC_interface.h	/^#define     RCC_TIM12 /;"	d
+RCC_TIM13	mcal/include/RCC_interface.h	/^#define     RCC_TIM13 /;"	d
+RCC_TIM14	mcal/include/RCC_interface.h	/^#define     RCC_TIM14 /;"	d
+RCC_TIM2	mcal/include/RCC_interface.h	/^#define     RCC_TIM2 /;"	d
+RCC_TIM3	mcal/include/RCC_interface.h	/^#define     RCC_TIM3 /;"	d
+RCC_TIM4	mcal/include/RCC_interface.h	/^#define     RCC_TIM4 /;"	d
+RCC_TIM5	mcal/include/RCC_interface.h	/^#define     RCC_TIM5 /;"	d
+RCC_TIM6	mcal/include/RCC_interface.h	/^#define     RCC_TIM6 /;"	d
+RCC_TIM7	mcal/include/RCC_interface.h	/^#define     RCC_TIM7 /;"	d
+RCC_TIM8	mcal/include/RCC_interface.h	/^#define     RCC_TIM8 /;"	d
+RCC_TIM9	mcal/include/RCC_interface.h	/^#define     RCC_TIM9 /;"	d
+RCC_UART4	mcal/include/RCC_interface.h	/^#define     RCC_UART4 /;"	d
+RCC_UART5	mcal/include/RCC_interface.h	/^#define     RCC_UART5 /;"	d
+RCC_USART	mcal/include/RCC_interface.h	/^#define     RCC_USART /;"	d
+RCC_USART2	mcal/include/RCC_interface.h	/^#define     RCC_USART2 /;"	d
+RCC_USART3	mcal/include/RCC_interface.h	/^#define     RCC_USART3 /;"	d
+RCC_USB	mcal/include/RCC_interface.h	/^#define     RCC_USB /;"	d
+RCC_WWD	mcal/include/RCC_interface.h	/^#define     RCC_WWD /;"	d
+RCC_voidDisableClock	mcal/sources/RCC_program.c	/^void RCC_voidDisableClock(u8 Copy_u8BusId,u8 Copy_u8PerId){$/;"	f	typeref:typename:void
+RCC_voidEnableClock	mcal/sources/RCC_program.c	/^void RCC_voidEnableClock(u8 Copy_u8BusId,u8 Copy_u8PerId){$/;"	f	typeref:typename:void
+RCC_voidInitSysClock	mcal/sources/RCC_program.c	/^void RCC_voidInitSysClock(void){$/;"	f	typeref:typename:void
+RECIEVED	app/include/PARSER_interface.h	/^    RECIEVED,$/;"	e	enum:__anon567f299b0103
+RES1	mcal/include/FPEC_private.h	/^		u32  RES1  :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+RES2	mcal/include/FPEC_private.h	/^		u32  RES2  :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+RES3	mcal/include/FPEC_private.h	/^		u32  RES3  :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+RES4	mcal/include/FPEC_private.h	/^		u32  RES4  :19;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:19
+RESERVED	mcal/include/FPEC_private.h	/^	volatile u32 RESERVED;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+Reset_Handler	mcal/sources/startup_code.c	/^void Reset_Handler(void){$/;"	f	typeref:typename:void
+SCB_VTOR	mcal/sources/startup_code.c	/^#define SCB_VTOR /;"	d	file:
+SET_BIT	lib/include/BIT_MATH.h	/^#define  SET_BIT(/;"	d
+SET_BYTE	lib/include/BIT_MATH.h	/^#define  SET_BYTE(/;"	d
+SR	mcal/include/FPEC_private.h	/^	volatile u32 SR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+SR	mcal/include/USART_private.h	/^	  volatile u32 SR;$/;"	m	struct:__anon4bdcb1230108	typeref:typename:volatile u32
+STD_TYPES_H	lib/include/STD_TYPES.h	/^#define STD_TYPES_H$/;"	d
+STK	mcal/include/STK_private.h	/^#define STK /;"	d
+STK_AHB	mcal/include/STK_private.h	/^#define   STK_AHB /;"	d
+STK_AHB_DIV_8	mcal/include/STK_private.h	/^#define   STK_AHB_DIV_8 /;"	d
+STK_Callback	mcal/include/STK_private.h	/^void (*STK_Callback)(void);$/;"	v	typeref:typename:void (*)(void)
+STK_PERIOD_INTERVAL	mcal/include/STK_private.h	/^#define     STK_PERIOD_INTERVAL /;"	d
+STK_SINGLE_INTERVAL	mcal/include/STK_private.h	/^#define     STK_SINGLE_INTERVAL /;"	d
+STK_u32GetElapsedTime	mcal/sources/STK_program.c	/^u32  STK_u32GetElapsedTime(void)$/;"	f	typeref:typename:u32
+STK_u32GetRemainingTime	mcal/sources/STK_program.c	/^u32  STK_u32GetRemainingTime(void)$/;"	f	typeref:typename:u32
+STK_u8ModeOfInterval	mcal/include/STK_private.h	/^static u8 STK_u8ModeOfInterval;$/;"	v	typeref:typename:u8
+STK_voidDeInit	mcal/sources/STK_program.c	/^void STK_voidDeInit(void){$/;"	f	typeref:typename:void
+STK_voidInit	mcal/sources/STK_program.c	/^void STK_voidInit(void)$/;"	f	typeref:typename:void
+STK_voidSetBusyWait	mcal/sources/STK_program.c	/^void STK_voidSetBusyWait(u32 Copy_u32Ticks)$/;"	f	typeref:typename:void
+STK_voidSetIntervalPeriodic	mcal/sources/STK_program.c	/^void STK_voidSetIntervalPeriodic(u32 Copy_u32Ticks,void (*Copy_ptr)(void))$/;"	f	typeref:typename:void
+STK_voidSetIntervalSingle	mcal/sources/STK_program.c	/^void STK_voidSetIntervalSingle(u32 Copy_u32Ticks,void (*Copy_ptr)(void))$/;"	f	typeref:typename:void
+STK_voidStopInterval	mcal/sources/STK_program.c	/^void STK_voidStopInterval(void)$/;"	f	typeref:typename:void
+STL	Makefile	/^STL = st-flash$/;"	m
+STL	output/Makefile	/^STL = st-flash$/;"	m
+STRT	mcal/include/FPEC_private.h	/^		u32  STRT  :1 ;$/;"	m	struct:__anonf62ad5b2010a::__anonf62ad5b20208	typeref:typename:u32:1
+SysTick_Handler	mcal/sources/STK_program.c	/^void SysTick_Handler(void)$/;"	f	typeref:typename:void
+TOG_BIT	lib/include/BIT_MATH.h	/^#define  TOG_BIT(/;"	d
+TOG_BYTE	lib/include/BIT_MATH.h	/^#define  TOG_BYTE(/;"	d
+UNRECIEVED	app/include/PARSER_interface.h	/^    UNRECIEVED$/;"	e	enum:__anon567f299b0103
+USART	mcal/include/USART_private.h	/^#define  USART /;"	d
+USART_8BIT_DATA_SIZE	mcal/include/USART_private.h	/^#define    USART_8BIT_DATA_SIZE /;"	d
+USART_9BIT_DATA_SIZE	mcal/include/USART_private.h	/^#define    USART_9BIT_DATA_SIZE /;"	d
+USART_BAUD_RATE	mcal/include/USART_config.h	/^#define   USART_BAUD_RATE /;"	d
+USART_DATA_SIZE	mcal/include/USART_config.h	/^#define   USART_DATA_SIZE /;"	d
+USART_EVEN_PARITY	mcal/include/USART_private.h	/^#define       USART_EVEN_PARITY /;"	d
+USART_ODD_PARITY	mcal/include/USART_private.h	/^#define		  USART_ODD_PARITY /;"	d
+USART_PARITY	mcal/include/USART_config.h	/^#define   USART_PARITY /;"	d
+USART_PARITY_CHECK	mcal/include/USART_config.h	/^#define   USART_PARITY_CHECK /;"	d
+USART_PARITY_DISABLED	mcal/include/USART_private.h	/^#define   USART_PARITY_DISABLED /;"	d
+USART_PARITY_ENABLED	mcal/include/USART_private.h	/^#define   USART_PARITY_ENABLED /;"	d
+USART_u8Receive	mcal/sources/USART_program.c	/^u8   USART_u8Receive(u8 *ReceivedData)$/;"	f	typeref:typename:u8
+USART_voidInit	mcal/sources/USART_program.c	/^void USART_voidInit(void)$/;"	f	typeref:typename:void
+USART_voidTransmit	mcal/sources/USART_program.c	/^void USART_voidTransmit(u8 *Copy_u8DataToTransmit)$/;"	f	typeref:typename:void
+VAL	mcal/include/STK_private.h	/^     u32  VAL;$/;"	m	struct:__anon0bf19e660108	typeref:typename:u32
+WRPR	mcal/include/FPEC_private.h	/^	volatile u32 WRPR;$/;"	m	struct:__anonf62ad5b20308	typeref:typename:volatile u32
+WordAccess	mcal/include/FPEC_private.h	/^	u32 WordAccess;$/;"	m	union:__anonf62ad5b2010a	typeref:typename:u32
+_GPIO_CONFIG_H_	mcal/include/GPIO_config.h	/^#define _GPIO_CONFIG_H_$/;"	d
+_GPIO_INTERFACE_H_	mcal/include/GPIO_interface.h	/^#define _GPIO_INTERFACE_H_$/;"	d
+_GPIO_PRIVATE_H_	mcal/include/GPIO_private.h	/^#define _GPIO_PRIVATE_H_$/;"	d
+_RCC_CONFIG_H_	mcal/include/RCC_config.h	/^#define    _RCC_CONFIG_H_ /;"	d
+_RCC_INTERFACE_H_	mcal/include/RCC_interface.h	/^#define _RCC_INTERFACE_H_$/;"	d
+_RCC_PRIVATE_H_	mcal/include/RCC_private.h	/^#define _RCC_PRIVATE_H_$/;"	d
+_STK_CONFIG_H_	mcal/include/STK_config.h	/^#define _STK_CONFIG_H_$/;"	d
+_STK_INTERFACE_H_	mcal/include/STK_interface.h	/^#define _STK_INTERFACE_H_$/;"	d
+_STK_PRIVATE_H_	mcal/include/STK_private.h	/^#define _STK_PRIVATE_H_$/;"	d
+_USART_CONFIG_H_	mcal/include/USART_config.h	/^#define    _USART_CONFIG_H_ /;"	d
+_USART_INTERFACE_H_	mcal/include/USART_interface.h	/^#define _USART_INTERFACE_H_$/;"	d
+_USART_PRIVATE_H_	mcal/include/USART_private.h	/^#define _USART_PRIVATE_H_$/;"	d
+__anon0bf19e660108	mcal/include/STK_private.h	/^typedef struct{$/;"	s
+__anon315e77260103	app/include/BURNER_private.h	/^{$/;"	g
+__anon4bdcb1230108	mcal/include/USART_private.h	/^typedef struct {$/;"	s
+__anon567f299b0103	app/include/PARSER_interface.h	/^{$/;"	g
+__anonf62ad5b2010a	mcal/include/FPEC_private.h	/^{$/;"	u
+__anonf62ad5b20208	mcal/include/FPEC_private.h	/^	struct{$/;"	s	union:__anonf62ad5b2010a
+__anonf62ad5b20308	mcal/include/FPEC_private.h	/^{$/;"	s
+__anonfc1d1c190103	app/include/INT_interface.h	/^{$/;"	g
+__isr_vectors	mcal/sources/startup_code.c	/^pHandler __isr_vectors[] = {$/;"	v	typeref:typename:pHandler[]
+addr_to_call	app/include/INT_private.h	/^Function_t addr_to_call;$/;"	v	typeref:typename:Function_t
+address_of_data	app/include/BURNER_private.h	/^static u32 address_of_data;$/;"	v	typeref:typename:u32
+all	Makefile	/^all : app.hex $/;"	t
+app.elf	Makefile	/^app.elf : linker.ld compile$/;"	t
+app.hex	Makefile	/^app.hex : app.elf	$/;"	t
+binary_Search	lib/sources/CHECK_program.c	/^int binary_Search(int array[],int size,int element){$/;"	f	typeref:typename:int
+bubble_Sort	lib/sources/CHECK_program.c	/^void bubble_Sort(int array[],int size){$/;"	f	typeref:typename:void
+checkHex	lib/sources/CHECK_program.c	/^u8 checkHex(u8 hexRecord[]){$/;"	f	typeref:typename:u8
+check_time	app/sources/INT_program.c	/^void check_time(void){$/;"	f	typeref:typename:void
+clean	Makefile	/^clean :$/;"	t
+clean	output/Makefile	/^clean :$/;"	t
+compile	Makefile	/^compile :  $/;"	t
+compile	output/Makefile	/^compile :  $/;"	t
+count_of_data	app/include/BURNER_private.h	/^static u8 count_of_data;$/;"	v	typeref:typename:u8
+data_address_flag	app/include/PARSER_private.h	/^volatile u8 data_address_flag;$/;"	v	typeref:typename:volatile u8
+data_buffer	app/include/PARSER_private.h	/^u8 *data_buffer =NULL;$/;"	v	typeref:typename:u8 *
+data_count	app/include/PARSER_private.h	/^static u8 data_count = 0;$/;"	v	typeref:typename:u8
+data_recieved_indication	app/include/PARSER_private.h	/^t_recived data_recieved_indication = UNRECIEVED;$/;"	v	typeref:typename:t_recived
+data_to_be_flashed	app/include/BURNER_private.h	/^static u16 *data_to_be_flashed;$/;"	v	typeref:typename:u16 *
+erase	Makefile	/^erase :$/;"	t
+factorial	lib/sources/CHECK_program.c	/^double factorial(int number){$/;"	f	typeref:typename:double
+first_record	app/include/INT_private.h	/^volatile u8 first_record;$/;"	v	typeref:typename:volatile u8
+first_record_flag	app/include/BURNER_private.h	/^u8 first_record_flag;$/;"	v	typeref:typename:u8
+flash	Makefile	/^flash : app.hex$/;"	t
+indicator	app/include/BURNER_private.h	/^t_burner_recieved indicator;$/;"	v	typeref:typename:t_burner_recieved
+jumbFlag	app/include/INT_private.h	/^volatile u8 jumbFlag;$/;"	v	typeref:typename:volatile u8
+jumb_to_app	app/sources/INT_program.c	/^void jumb_to_app(void)$/;"	f	typeref:typename:void
+linear_Search	lib/sources/CHECK_program.c	/^int linear_Search(int array[],int size,int element){$/;"	f	typeref:typename:int
+main	app/sources/main.c	/^int main(void)$/;"	f	typeref:typename:int
+pHandler	mcal/sources/startup_code.c	/^typedef void (* const pHandler)(void);$/;"	t	typeref:typename:void (* const)(void)	file:
+parsed_data	app/include/PARSER_private.h	/^static u16 parsed_data[100] = {0};$/;"	v	typeref:typename:u16[100]
+power	lib/sources/CHECK_program.c	/^double power(double number, double power)$/;"	f	typeref:typename:double
+s16	lib/include/STD_TYPES.h	/^typedef signed short int    s16;$/;"	t	typeref:typename:signed short int
+s32	lib/include/STD_TYPES.h	/^typedef signed long  int    s32;$/;"	t	typeref:typename:signed long int
+s8	lib/include/STD_TYPES.h	/^typedef signed char         s8;$/;"	t	typeref:typename:signed char
+status	app/include/INT_private.h	/^static volatile t_status status ;$/;"	v	typeref:typename:volatile t_status
+stk_t	mcal/include/STK_private.h	/^}stk_t;$/;"	t	typeref:struct:__anon0bf19e660108
+stringCompare	lib/sources/CHECK_program.c	/^u8 stringCompare(u8 string1[],u8 string2[]){$/;"	f	typeref:typename:u8
+stringLength	lib/sources/CHECK_program.c	/^u8 stringLength(u8 string[]){$/;"	f	typeref:typename:u8
+t_burner_recieved	app/include/BURNER_private.h	/^} t_burner_recieved;$/;"	t	typeref:enum:__anon315e77260103
+t_recived	app/include/PARSER_interface.h	/^} t_recived;$/;"	t	typeref:enum:__anon567f299b0103
+t_status	app/include/INT_interface.h	/^} t_status;$/;"	t	typeref:enum:__anonfc1d1c190103
+u16	lib/include/STD_TYPES.h	/^typedef unsigned short int  u16;$/;"	t	typeref:typename:unsigned short int
+u32	lib/include/STD_TYPES.h	/^typedef unsigned long  int  u32;$/;"	t	typeref:typename:unsigned long int
+u8	lib/include/STD_TYPES.h	/^typedef unsigned char       u8;$/;"	t	typeref:typename:unsigned char
+u8RecBuffer	app/include/INT_private.h	/^u8 u8RecBuffer[100];$/;"	v	typeref:typename:u8[100]
+u8RecCounter	app/include/INT_private.h	/^volatile u8  u8RecCounter;$/;"	v	typeref:typename:volatile u8
+usart_t	mcal/include/USART_private.h	/^}usart_t;$/;"	t	typeref:struct:__anon4bdcb1230108

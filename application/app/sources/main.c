@@ -1,40 +1,33 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 #include "RCC_interface.h"
+#include "USONIC_interface.h"
 #include "GPIO_interface.h"
-#include "STK_interface.h"
-
-
-volatile u8 flag = 0;
-void func(void);
 
 int main(void)
 {
-	RCC_voidInitSysClock();
-	STK_voidInit();
-	RCC_voidEnableClock(RCC_APB2, RCC_IOPA);
-	GPIO_voidSetPinDirection(GPIOA, GPIO_PIN1, GPIO_OUTPUT_2MHZ_PP);
-	STK_voidSetIntervalPeriodic(1000000, func);
-	
-	
-	
+	RCC_initSysClock();
+	RCC_enableClock(RCC_APB2, RCC_IOPA);
+	GPIO_setPinDirection(GPIOA, GPIO_PIN2, GPIO_OUTPUT_10MHZ_PP);
+	GPIO_setPinValue(GPIOA, GPIO_PIN2, GPIO_HIGH);
+	// USONIC_init();
+	// u32 Distance = 0;
 	while (1)
 	{
-	   
-		
-	}
+		// if (USONIC_getDistance(&Distance) == VALID_DISTANCE)
+		// {
+		// 	if (Distance <= 50 )
+		// 	{
+		// 		GPIO_setPinValue(GPIOA, GPIO_PIN2, GPIO_HIGH);
+		// 	}
+		// 	else 
+		// 	{
+		// 		GPIO_setPinValue(GPIOA, GPIO_PIN2, GPIO_LOW);
+		// 	}
+		// }
+
+	 }
 	return 0;
 }
 
-void func(void)
-{
-	if (flag == 0)
-	{
-		GPIO_voidSetPinValue(GPIOA,GPIO_PIN1,GPIO_HIGH);
-		flag = 1;
-		}
-	else{
-		GPIO_voidSetPinValue(GPIOA,GPIO_PIN1,GPIO_LOW);
-		flag = 0;
-	}
-}
+

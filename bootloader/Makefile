@@ -68,7 +68,7 @@ erase :
 	@$(STL) erase
 	@echo "===================================="
 	@echo "===================================="
-	@echo "..The Rom was Successfully erased.."
+	@echo "....Flash was Successfully erased...."
 	@date -R
 	@echo "===================================="
 	@echo "===================================="

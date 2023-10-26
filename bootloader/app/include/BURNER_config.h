@@ -1,19 +1,20 @@
-#ifndef BURNER_CONFIG_H
-#define BURNER_CONFIG_H
- 
-/************************************************************************
-* @file BURNER_config.h
-* @author Copyright (c) 2023 Gomaa Mohammed Gomaa.  All rights reserved.
-* @version V0.1   
-* @date Mon, 05 Jun 2023 18:19:59 +0300
-* @brief A description of the module’s purpose.
-*************************************************************************/
+/*****************************************************************************
+* @file:    BURNER_config.h
+* @author:  Copyright (c) 2023 Gomaa Mohammed Gomaa.
+* @license: GNU GPL version 3 or later.
+*			This is free software: you are free to change and redistribute it.  
+*			There is NO WARRANTY, to the extent permitted by law.
+* @version: V0.2   
+* @date:    Fri, 20 Oct 2023 14:21:12 +0200
+* @brief:   Bootloader for STM32F103
+******************************************************************************/
+#ifndef  _BURNER_CONFIG_H
+#define  _BURNER_CONFIG_H
 
-/* ==================================================================== */
-/* =================== Configurations Selection ======================= */
-/* ==================================================================== */
-
-/* Configurations Selection go here */
+/* Define Application Boundries */
+#define  APP_START_PAGE      8
+#define  APP_NUMBER_OF_PAGES 54
+#define  APP_SART_ADDRESS    0x08002000
 
 
 

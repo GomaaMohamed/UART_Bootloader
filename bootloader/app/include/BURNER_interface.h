@@ -1,40 +1,79 @@
-#ifndef BURNER_INTERFACE_H
-#define BURNER_INTERFACE_H
- 
-/************************************************************************
-* @file BURNER_interface.h
-* @author Copyright (c) 2023 Gomaa Mohammed Gomaa.  All rights reserved.
-* @version V0.1   
-* @date Mon, 05 Jun 2023 18:19:59 +0300
-* @brief A description of the module’s purpose.
-*************************************************************************/
-
-/* ==================================================================== */
-/* ======================= public data types ========================== */
-/* ==================================================================== */
-
-/* Definition of public datatypes go here */
-
-
+/*****************************************************************************
+* @file:    BURNER_interface.h
+* @author:  Copyright (c) 2023 Gomaa Mohammed Gomaa.
+* @license: GNU GPL version 3 or later.
+*			This is free software: you are free to change and redistribute it.  
+*			There is NO WARRANTY, to the extent permitted by law.
+* @version: V0.2   
+* @date:    Fri, 20 Oct 2023 14:21:12 +0200
+* @brief:   Bootloader for STM32F103
+******************************************************************************/
+#ifndef  _BURNER_INTERFACE_H
+#define  _BURNER_INTERFACE_H
 
 
 /* ==================================================================== */
-/* ======================== public Macros ============================= */
+/* ====================== Public Data Types ========================== */
 /* ==================================================================== */
 
-/* Public Macro Definitions go here */
-
-
+/* Received Data data type*/
+typedef enum
+{
+    IDLE_STATE=0,
+    WRITE_REQUEST,
+    ERASE_REQUEST,
+    READ_REQUEST
+} BurnerRequest_type;
 
 
 /* ==================================================================== */
-/* ==================== public function prototypes ==================== */
+/* =================== Public Functions Declaration =================== */
 /* ==================================================================== */
 
-/* Public Functions Prototypes go here */
+/**
+ * @brief---------------------> Initialize burner module
+ * @param---------------------> None
+ * @return--------------------> None
+ * @preconditions-------------> None
+ * @postconditions------------> None
+ * @synchronous/asynchronous--> Synchronous
+ * @reentrant/non-reentrant---> Non-Reentrant       
+ */
 void BURNER_init(void);
-void BURNER_sendData(u16 *data, u32 address, u8 count);
-void BURNER_indicateData(void);
+
+/**
+ * @brief---------------------> Send data to burner
+ * @parameter1----------------> (Data) refrence to data
+ * @parameter2----------------> (Address) address of data
+ * @parameter3----------------> (Count) number of half words
+ * @return--------------------> None
+ * @preconditions-------------> None
+ * @postconditions------------> None
+ * @synchronous/asynchronous--> Synchronous
+ * @reentrant/non-reentrant---> Non-Reentrant       
+ */
+void BURNER_sendData(u16 *Data, u32 Address, u8 Count);
+
+/**
+ * @brief---------------------> Indicate received data
+ * @param---------------------> None
+ * @return--------------------> None
+ * @preconditions-------------> None
+ * @postconditions------------> None
+ * @synchronous/asynchronous--> Synchronous
+ * @reentrant/non-reentrant---> Non-Reentrant       
+ */
+void BURNER_makeRequest(BurnerRequest_type BurnerRequest);
+
+/**
+ * @brief---------------------> Task to be called periodically to do the module logic
+ * @param---------------------> None
+ * @return--------------------> None
+ * @preconditions-------------> None
+ * @postconditions------------> None
+ * @synchronous/asynchronous--> Synchronous
+ * @reentrant/non-reentrant---> Non-Reentrant       
+ */
 void BURNER_update(void);
 
 #endif

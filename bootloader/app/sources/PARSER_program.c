@@ -1,164 +1,157 @@
-/************************************************************************
-* @file PARSER_program.c
-* @author Copyright (c) 2023 Gomaa Mohammed Gomaa.  All rights reserved.
-* @version V0.1   
-* @date Mon, 05 Jun 2023 18:19:15 +0300
-* @brief A description of the module’s purpose.
-*************************************************************************/
+/*****************************************************************************
+* @file:    PARSER_program.c
+* @author:  Copyright (c) 2023 Gomaa Mohammed Gomaa.
+* @license: GNU GPL version 3 or later.
+*			This is free software: you are free to change and redistribute it.  
+*			There is NO WARRANTY, to the extent permitted by law.
+* @version: V0.2   
+* @date:    Fri, 20 Oct 2023 14:21:12 +0200
+* @brief:   Parser Module
+******************************************************************************/
 
 /* ==================================================================== */
-/* ========================== include files =========================== */
+/* ========================== Include Files =========================== */
 /* ==================================================================== */
 
-/* Inclusion of Standard Types and Bit Math header files goes here */
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 #include "CHECK_interface.h"
-/* Inclusion of Module header files goes here */
+
 #include "PARSER_interface.h"
 #include "PARSER_private.h"
 #include "PARSER_config.h"
 
-/* Inclusion of interface header files of the Other Modules goes here */
 #include "BURNER_interface.h"
 #include "INT_interface.h"
 
-
-
-
 /* ==================================================================== */
-/* ======================== global variables ========================== */
+/* ================= Public Functions Implementation ================== */
 /* ==================================================================== */
 
-/* Global variables definitions go here */
-
-
-
-
-/* ==================================================================== */
-/* =================== Public functions definition ==================== */
-/* ==================================================================== */
-
-// function to initialize the module
-void PARSER_init(void){
-
-    // data initialization of the module
-    data_recieved_indication = UNRECIEVED;
-    data_buffer =NULL;
-    data_count = 0;
+// Function to initialize the module
+void PARSER_init(void)
+{
+    // Data initialization of the module
+    ReceivedDataIndication = UNRECIEVED;
+    DataBuffer =NULL;
+    DataCount = 0;
     Address = 0x08000000;
-	data_address_flag = 0;
+	DataAddressFlag = 0;
 }
 
-// function to be called from the other modules to send the data that will be parsed
-void PARSER_setRecord(u8 *Record){
-    data_buffer = Record;
+// Function to be called from the other modules to send the data that will be parsed
+void PARSER_setRecord(u8 *Record)
+{
+    DataBuffer = Record;
 }
 
-// function to be called from the other modules to set the event of the recieved data
-void PARSER_indicateRecievedData(void){
-    data_recieved_indication = RECIEVED;
+// Function to be called from the other modules to set the event of the recieved data
+void PARSER_indicateRecievedData(void)
+{
+    ReceivedDataIndication = RECIEVED;
 }
 
-// task to be called periodicly to do the logic of the module
-void PARSER_update(void){
-	// check that there is a record must be parsed
-    if (data_recieved_indication == RECIEVED)
+// Task to be called periodicly to do the logic of the module
+void PARSER_update(void)
+{
+	// Check that there is a record must be parsed
+    if (ReceivedDataIndication == RECIEVED)
     {
         // check the Record
-		u8 sumCheck = checkHex(data_buffer);
-		if (sumCheck == 1)
+		u8 CheckSum = checkHex(DataBuffer);
+		if (CheckSum == 1)
 		{
 			// Analyse the Record
-			Parser_voidParseRecord(data_buffer);
-       		if (data_address_flag == 1)
+			parseRecord(DataBuffer);
+       		if (DataAddressFlag == 1)
        	    {
-        		// send the Data Record to Burner to flash it
-        		BURNER_sendData(parsed_data,Address,data_count);
+        		// Send the Data Record to Burner to flash it
+        		BURNER_sendData(ParsedData,Address,DataCount);
         		// indicate the burner with the record
-       			 BURNER_indicateData();
-        		data_address_flag == 0;
-            }
+				BURNER_makeRequest(WRITE_REQUEST);
+				DataAddressFlag = 0;
+			}
 			else{
-				INIT_sendOkStatus(OK);
+				// Send Ack
+				INT_sendAckStatus(ACK);
 			}
 			
 		}
 		
 		// set the UNRECIEVED state
-        data_recieved_indication = UNRECIEVED;
+        ReceivedDataIndication = UNRECIEVED;
     }
     
 }
 
 /* ==================================================================== */
-/* =============== private functions definition ======================= */
+/* =============== Private Functions Implementation =================== */
 /* ==================================================================== */
 
-// function to parse the data record(remove the extra data and set the endianess)
-static void ParseData(u8* Copy_u8BufData)
+// Function to parse the data record(remove the extra data and set the endianess)
+static void parseData(u8* BufData)
 {
-	// auxilary variables
+	// Auxilary variables
 	u8 DigitLow,DigitHigh,CC,i;
 	u8 DataDigit0,DataDigit1,DataDigit2,DataDigit3;
 	u8 DataCounter = 0;
-	/* get character count */
-	DigitHigh = AsciToHex (Copy_u8BufData[1]);
-	DigitLow  = AsciToHex (Copy_u8BufData[2]);
+	// Get character count 
+	DigitHigh = AsciToHex (BufData[1]);
+	DigitLow  = AsciToHex (BufData[2]);
 	CC        = (DigitHigh<<4) | DigitLow ;
-	/* get the address */
-	DataDigit0 = AsciToHex (Copy_u8BufData[3]);
-	DataDigit1 = AsciToHex (Copy_u8BufData[4]);
-	DataDigit2 = AsciToHex (Copy_u8BufData[5]);
-	DataDigit3 = AsciToHex (Copy_u8BufData[6]);
-	/* clear low part of address */
+	// Get the address 
+	DataDigit0 = AsciToHex (BufData[3]);
+	DataDigit1 = AsciToHex (BufData[4]);
+	DataDigit2 = AsciToHex (BufData[5]);
+	DataDigit3 = AsciToHex (BufData[6]);
+	// Clear low part of address 
 	Address = Address & 0xFFFF0000;
-	// set low part
+	// Set low part
 	Address = Address | (DataDigit3) | (DataDigit2 << 4) | (DataDigit1 << 8) | (DataDigit0<<12);
-    // loop on all the recieved data, set the endianess and store it in a new buffer 
+    // Loop on all the recieved data, set the endianess and store it in a new buffer 
 	for (i=0;i<CC/2; i++)
 	{  
-		// get current data
-		DataDigit0 = AsciToHex (Copy_u8BufData[4*i+9 ]);
-		DataDigit1 = AsciToHex (Copy_u8BufData[4*i+10]);
-		DataDigit2 = AsciToHex (Copy_u8BufData[4*i+11]);
-		DataDigit3 = AsciToHex (Copy_u8BufData[4*i+12]);
-	    // set the endianess and store the data
-		parsed_data[DataCounter] = (DataDigit3 << 8) | (DataDigit2 << 12) | (DataDigit1) | (DataDigit0<<4);
+		// Get current data
+		DataDigit0 = AsciToHex (BufData[4*i+9 ]);
+		DataDigit1 = AsciToHex (BufData[4*i+10]);
+		DataDigit2 = AsciToHex (BufData[4*i+11]);
+		DataDigit3 = AsciToHex (BufData[4*i+12]);
+	    // Set the endianess and store the data
+		ParsedData[DataCounter] = (DataDigit3 << 8) | (DataDigit2 << 12) | (DataDigit1) | (DataDigit0<<4);
 		DataCounter++;
 	}
-	// set the number of half words
-	data_count = CC/2;
+	// Set the number of half words
+	DataCount = CC/2;
 }
 
-// function to parse the address record
-static void ParseUpperAddress(u8* Copy_u8BufData)
+// Function to parse the address record
+static void parseUpperAddress(u8* BufData)
 {
-	// auxilary variables
+	// Auxilary variables
 	u8 DataDigit0,DataDigit1,DataDigit2,DataDigit3;
-	/* get address */
-	DataDigit0 = AsciToHex (Copy_u8BufData[9]);
-	DataDigit1 = AsciToHex (Copy_u8BufData[10]);
-	DataDigit2 = AsciToHex (Copy_u8BufData[11]);
-	DataDigit3 = AsciToHex (Copy_u8BufData[12]);
-	/* clear high part of address */
+	// Get address 
+	DataDigit0 = AsciToHex (BufData[9]);
+	DataDigit1 = AsciToHex (BufData[10]);
+	DataDigit2 = AsciToHex (BufData[11]);
+	DataDigit3 = AsciToHex (BufData[12]);
+	// Clear high part of address 
 	Address = Address & (u32)0x0000FFFF;
-	// set the address
+	// Set the address
 	Address = Address | (u32)((u32)(DataDigit0 << 28) | (u32)(DataDigit1 << 24) | (u32)(DataDigit2 << 20) | (u32)(DataDigit3 << 16));
 }
 
-// function to parse the record based on its type
-static void Parser_voidParseRecord(u8* Copy_u8BufData)
+// Function to parse the record based on its type
+static void parseRecord(u8* BufData)
 {
-	switch (Copy_u8BufData[8])
+	switch (BufData[8])
 	{
 	case '0': 
-        ParseData(Copy_u8BufData);
-        data_address_flag = 1;
+        parseData(BufData);
+        DataAddressFlag = 1;
         break;
     case '4': 
-        ParseUpperAddress(Copy_u8BufData);
-    	data_address_flag = 0;
+        parseUpperAddress(BufData);
+    	DataAddressFlag = 0;
     	break;
     }
 }

@@ -1,42 +1,63 @@
-#ifndef INT_INTERFACE_H
-#define INT_INTERFACE_H
- 
-/************************************************************************
-* @file INT_interface.h
-* @author Copyright (c) 2023 Gomaa Mohammed Gomaa.  All rights reserved.
-* @version V0.1   
-* @date Mon, 05 Jun 2023 18:18:23 +0300
-* @brief A description of the module’s purpose.
-*************************************************************************/
+/*****************************************************************************
+* @file:    INT_interface.h
+* @author:  Copyright (c) 2023 Gomaa Mohammed Gomaa.
+* @license: GNU GPL version 3 or later.
+*			This is free software: you are free to change and redistribute it.  
+*			There is NO WARRANTY, to the extent permitted by law.
+* @version: V0.2   
+* @date:    Fri, 20 Oct 2023 14:21:12 +0200
+* @brief:   Bootloader for STM32F103
+******************************************************************************/
+#ifndef _INT_INTERFACE_H
+#define _INT_INTERFACE_H
 
 /* ==================================================================== */
-/* ======================= public data types ========================== */
+/* ======================= Public Data Types ========================== */
 /* ==================================================================== */
 
-/* Definition of public datatypes go here */
+/* Response Statuse data type */
 typedef enum
 {
-    OK,
-    NOT_OK
-} t_status;
+    NOTACK=0,
+    ACK
+} ResponseStatus_type;
 
 /* ==================================================================== */
-/* ======================== public Macros ============================= */
+/* ==================== Public Functions Declaration ================== */
 /* ==================================================================== */
 
-/* Public Macro Definitions go here */
+/**
+ * @brief---------------------> Initialize interface module
+ * @param---------------------> None
+ * @return--------------------> None
+ * @preconditions-------------> None
+ * @postconditions------------> None
+ * @synchronous/asynchronous--> Synchronous
+ * @reentrant/non-reentrant---> Non-Reentrant       
+ */
+void INT_init(void);
 
+/**
+ * @brief---------------------> Task to be called periodically to do the module logic
+ * @param---------------------> None
+ * @return--------------------> None
+ * @preconditions-------------> None
+ * @postconditions------------> None
+ * @synchronous/asynchronous--> Synchronous
+ * @reentrant/non-reentrant---> Non-Reentrant       
+ */
+void INT_update(void);
 
-
-
-/* ==================================================================== */
-/* ==================== public function prototypes ==================== */
-/* ==================================================================== */
-
-/* Public Functions Prototypes go here */
-void INIT_init(void);
-void INIT_update(void);
-void INIT_sendOkStatus(t_status status_value);
+/**
+ * @brief---------------------> Set response status to be sent to host
+ * @parameter1----------------> (ResponseStatus) response status to be sent
+ * @return--------------------> None
+ * @preconditions-------------> None
+ * @postconditions------------> None
+ * @synchronous/asynchronous--> Synchronous
+ * @reentrant/non-reentrant---> Non-Reentrant       
+ */
+void INT_sendAckStatus(ResponseStatus_type ResponseStatus);
 
 #endif
 

@@ -1,19 +1,18 @@
-#ifndef PARSER_CONFIG_H
-#define PARSER_CONFIG_H
+/*****************************************************************************
+* @file:    PARSER_config.h
+* @author:  Copyright (c) 2023 Gomaa Mohammed Gomaa.
+* @license: GNU GPL version 3 or later.
+*			This is free software: you are free to change and redistribute it.  
+*			There is NO WARRANTY, to the extent permitted by law.
+* @version: V0.2   
+* @date:    Fri, 20 Oct 2023 14:21:12 +0200
+* @brief:   Parser Module
+******************************************************************************/
+#ifndef  _PARSER_CONFIG_H
+#define  _PARSER_CONFIG_H
  
-/************************************************************************
-* @file PARSER_config.h
-* @author Copyright (c) 2023 Gomaa Mohammed Gomaa.  All rights reserved.
-* @version V0.1   
-* @date Mon, 05 Jun 2023 18:19:15 +0300
-* @brief A description of the module’s purpose.
-*************************************************************************/
 
-/* ==================================================================== */
-/* =================== Configurations Selection ======================= */
-/* ==================================================================== */
 
-/* Configurations Selection go here */
 
 
 

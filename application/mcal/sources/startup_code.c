@@ -20,13 +20,15 @@ extern u32 _estack;
 void __attribute__((weak)) Reset_Handler(void);
 void __attribute__((weak)) NMI_Handler(void);
 void __attribute__((weak)) HardFault_Handler(void);
+void __attribute__((weak)) SVCall_Handler(void);
+void __attribute__((weak)) PendSV_Handler(void);
 void __attribute__((weak)) SysTick_Handler(void);
 void __attribute__((weak)) TIM2_IRQHandler(void);
 
 // Definitions
 #define SCB_VTOR   *((volatile u32*)0xE000ED08)
 #define FLASH_BASE  ((u32)0x08000000)
-#define OFFSET 0x2000 
+#define OFFSET 0x0000 
 typedef void (* const pHandler)(void);
 
 //Force an Array of Vectors to be stored in .intvects Section
@@ -34,9 +36,11 @@ __attribute__((section(".intvects")))
 pHandler __isr_vectors[] = {
 	[0]=(pHandler)&_estack, // initial stack pointer
 	[1]=Reset_Handler,		
-    [2]=HardFault_Handler,   
+    [2]=HardFault_Handler, 
+    [11]=SVCall_Handler,
+    [14]=PendSV_Handler,  
 	[15]=SysTick_Handler,
-	//[44]=TIM2_IRQHandler
+	[44]=TIM2_IRQHandler
 };
 void NMI_Handler(void){while(1);}
 void HardFault_Handler(void){while(1);}
